@@ -1,0 +1,213 @@
+:root {
+    --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+body {
+    background-color: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+.container {
+    width: 95%;         
+    max-width: 450px;    
+    margin: 30px auto;
+    padding: 0 15px;   
+    box-sizing: border-box;
+}
+
+.inc-exp-container {
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.inc-exp-container > div {
+    flex: 1;
+    text-align: center;
+}
+
+.inc-exp-container > div:first-of-type {
+    border-right: 1px solid #dedede;
+}
+
+@media (max-width: 320px) {
+    .inc-exp-container {
+        flex-direction: column;
+    }
+    
+    .inc-exp-container > div:first-of-type {
+        border-right: none;
+        border-bottom: 1px solid #dedede;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+.money {
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin: 5px 0;
+}
+
+.money.plus {
+    color: #2ecc71;
+}
+
+.money.minus {
+    color: #c0392b;
+}
+
+.list {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.list li {
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 12px;
+    margin: 10px 0;
+    word-break: break-word; 
+    gap: 10px;
+}
+
+.list li span {
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+/* Border indicator for type of transaction */
+.list li.plus {
+    border-right: 5px solid #2ecc71;
+}
+
+.list li.minus {
+    border-right: 5px solid #c0392b;
+}
+
+.btn {
+    cursor: pointer;
+    background-color: #9c88ff;
+    color: #fff;
+    border: 0;
+    display: block;
+    font-size: 16px;
+    margin: 10px 0 30px;
+    padding: 10px;
+    width: 100%;
+}
+
+.list li:hover .delete-btn {
+    opacity: 1;
+}
+
+.progress-bar {
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    height: 15px;
+    width: 100%;
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    transition: width 0.5s ease, background-color 0.5s ease;
+}
+
+.currency-container {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+input[type='text'],
+input[type='number'],
+select {
+    border: 1px solid #dedede;
+    border-radius: 2px;
+    display: block;
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+    margin-top: 5px;
+    box-sizing: border-box; /* Ensures padding doesn't break the width */
+}
+
+.form-control {
+    margin-bottom: 10px;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none; /* Hidden by default */
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.modal-btns {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-secondary { background: #95a5a6; color: white; border: none; padding: 10px; flex: 1; border-radius: 5px; cursor: pointer; }
+.btn-danger { background: #e74c3c; color: white; border: none; padding: 10px; flex: 1; border-radius: 5px; cursor: pointer; }
+
+
+.action-btns {
+    display: flex;
+    gap: 10px;
+    margin-left: 15px;
+    flex-shrink: 0;
+}
+
+/* Make sure buttons don't have absolute positioning anymore */
+.delete-btn, .edit-btn {
+    position: static; 
+    transform: none;
+    opacity: 1;
+    cursor: pointer;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    color: white;
+}
+
+.edit-btn { background-color: #3498db; }
+.delete-btn { background-color: #e74c3c; }
+
+.btn, .edit-btn, .delete-btn, select, input {
+    min-height: 44px; 
+}

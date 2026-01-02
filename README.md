@@ -78,7 +78,7 @@ Transactions are deleted only after user confirmation through a modal dialog to 
 Transactions can be exported as a CSV file:
 
 ```
-Description,Amount,Type
+Title,Amount,Type
 ```
 
 File name:
